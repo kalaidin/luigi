@@ -902,7 +902,7 @@ class JobTask(BaseHadoopJobTask):
         if self.__module__ == '__main__':
             d = pickle.dumps(self)
             module_name = os.path.basename(sys.argv[0]).rsplit('.', 1)[0]
-            d = d.replace(b'(__main__', module_name.encode("utf-8"))
+            d = d.replace(b'__main__', module_name.encode("utf-8"))
             open(file_name, "wb").write(d)
 
         else:
