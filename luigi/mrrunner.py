@@ -70,7 +70,7 @@ class Runner(object):
 
 def print_exception(exc):
     tb = traceback.format_exc()
-    print('luigi-exc-hex=%s' % binascii.hexlify(tb), file=sys.stderr)
+    print('luigi-exc-hex=%s' % binascii.hexlify(bytes(tb)), file=sys.stderr)
 
 
 def main(args=None, stdin=sys.stdin, stdout=sys.stdout, print_exception=print_exception):
