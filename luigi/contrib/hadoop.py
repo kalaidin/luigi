@@ -145,6 +145,9 @@ def create_packages_archive(packages, filename):
 
         n = package.__name__.replace(".", "/")
 
+        if n == "__main__":
+            continue
+
         logger.debug("Adding %s" % n)
 
         if getattr(package, "__path__", None):
