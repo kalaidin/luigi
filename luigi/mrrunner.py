@@ -24,7 +24,7 @@ mapper and reducer on the Hadoop nodes.
 """
 
 from __future__ import print_function
-
+import binascii
 try:
     import cPickle as pickle
 except ImportError:
@@ -70,7 +70,7 @@ class Runner(object):
 
 def print_exception(exc):
     tb = traceback.format_exc()
-    print('luigi-exc-hex=%s' % tb.encode('hex'), file=sys.stderr)
+    print('luigi-exc-hex=%s' % binascii.hexlify(tb), file=sys.stderr)
 
 
 def main(args=None, stdin=sys.stdin, stdout=sys.stdout, print_exception=print_exception):
