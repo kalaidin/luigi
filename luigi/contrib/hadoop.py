@@ -145,6 +145,8 @@ def create_packages_archive(packages, filename):
 
         n = package.__name__.replace(".", "/")
 
+        logger.debug("Adding %s" % n)
+
         if getattr(package, "__path__", None):
             # TODO: (BUG) picking only the first path does not
             # properly deal with namespaced packages in different
